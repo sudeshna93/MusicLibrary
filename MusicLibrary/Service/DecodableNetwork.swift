@@ -13,6 +13,7 @@ class DecodableNetwork{
     
     var decoder = JSONDecoder()
     var session : URLSession
+    var coreData = CoreDataManager()
     
     //keep track of exixting task
     
@@ -21,6 +22,7 @@ class DecodableNetwork{
     //MARK: Initializer
     
     init(_ session: URLSession) {
+        decoder.userInfo[.context] = coreData.mainMOC
         self.session = session
     }
     

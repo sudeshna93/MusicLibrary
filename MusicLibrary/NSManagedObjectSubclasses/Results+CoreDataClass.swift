@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Results)
 public class Results: NSManagedObject, Decodable {
-    enum CodingKeys: String, CodingKeys {
+    enum CodingKeys: String, CodingKey {
         case artistName = "artistName"
         case albumName = "name"
         case thumbnailImage = "artworkUrl100"
@@ -42,15 +42,15 @@ public class Results: NSManagedObject, Decodable {
                                           forKey: .artistName)
         
         albumName = try container.decode(String.self,
-        forKey: .name)
+        forKey: .artistName)
         thumbnailImage = try container.decode(String.self,
-        forKey: .artworkUrl100)
+        forKey: .thumbnailImage)
         
         url = try container.decode(String.self,
         forKey: .url)
         releaseDate = try container.decode(String.self,
         forKey: .releaseDate)
         copyRight = try container.decode(String.self,
-        forKey: .copyright)
+        forKey: .copyRight)
     }
 }

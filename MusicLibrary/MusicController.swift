@@ -47,7 +47,7 @@ class MusicController : MusicControllerProtocol{
         let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/itunes-music/top-albums/all/100/explicit.json")!
         networker.get(type: MusicResponse.self, url: url) { (result) in
             print("finished download")
-            self._musics = (result?.musicfeed.results)!
+            self._musics = result?.musicfeed?.resultsArray ?? []
             self.musics = self._musics
             completion(self.musics)
             

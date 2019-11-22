@@ -2,10 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="MusicFeed" representedClassName=".MusicFeed" syncable="YES">
         <relationship name="response" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MusicResponse" inverseName="musicfeed" inverseEntity="MusicResponse"/>
-        <relationship name="results" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Results" inverseName="musicfeed" inverseEntity="Results"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Results" inverseName="musicfeed" inverseEntity="Results"/>
     </entity>
     <entity name="MusicResponse" representedClassName=".MusicResponse" syncable="YES">
-        <relationship name="musicfeed" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MusicFeed" inverseName="response" inverseEntity="MusicFeed"/>
+        <relationship name="musicfeed" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="MusicFeed" inverseName="response" inverseEntity="MusicFeed"/>
     </entity>
     <entity name="Results" representedClassName=".Results" syncable="YES">
         <attribute name="albumName" optional="YES" attributeType="String"/>

@@ -30,13 +30,12 @@ public class MusicResponse: NSManagedObject ,Decodable {
         
         //entity description
         
-        let entity = NSEntityDescription.entity(forEntityName: "feed", in: context)!
+        let entity = NSEntityDescription.entity(forEntityName: "MusicResponse", in: context)!
         super.init(entity: entity, insertInto: context)
         
         //Rest of Decodable's implicit implementation
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let musicArr = try container.decode([MusicFeed], forKey: .musicfeed)
-        musicfeed = NSOrderedSet(array: musicArr)
+        musicfeed = try container.decode(MusicFeed.self, forKey: .musicfeed)
         
     }
     

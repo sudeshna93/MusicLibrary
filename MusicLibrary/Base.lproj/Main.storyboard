@@ -45,7 +45,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="X7U-9G-qSP">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5E4-zP-TCl">
+                        <barButtonItem key="rightBarButtonItem" title="SWAP VIEW" id="5E4-zP-TCl">
                             <connections>
                                 <segue destination="Mdz-BB-aeL" kind="show" id="6hc-3e-Qko"/>
                             </connections>
