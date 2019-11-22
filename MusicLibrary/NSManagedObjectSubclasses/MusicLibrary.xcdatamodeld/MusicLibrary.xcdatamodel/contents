@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MusicFeed" representedClassName=".MusicFeed" syncable="YES">
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MusicResponse" inverseName="musicfeed" inverseEntity="MusicResponse"/>
+        <relationship name="results" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Results" inverseName="musicfeed" inverseEntity="Results"/>
+    </entity>
+    <entity name="MusicResponse" representedClassName=".MusicResponse" syncable="YES">
+        <relationship name="musicfeed" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MusicFeed" inverseName="response" inverseEntity="MusicFeed"/>
+    </entity>
+    <entity name="Results" representedClassName=".Results" syncable="YES">
+        <attribute name="albumName" optional="YES" attributeType="String"/>
+        <attribute name="artistName" optional="YES" attributeType="String"/>
+        <attribute name="copyRight" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailImage" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="musicfeed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MusicFeed" inverseName="results" inverseEntity="MusicFeed"/>
+    </entity>
+    <elements>
+        <element name="MusicFeed" positionX="-36" positionY="36" width="128" height="73"/>
+        <element name="MusicResponse" positionX="-54" positionY="27" width="128" height="58"/>
+        <element name="Results" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
+</model>
